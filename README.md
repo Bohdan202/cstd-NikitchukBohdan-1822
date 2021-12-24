@@ -7,4 +7,4 @@ Project name: Web-application for listening music without advertisment and creat
 Programming language: JS, Python
 
 Used frameworks: Vue.js, Flask
-Used libraries: SASS, Pusher, Uid, CORS
+Used libraries: SASS, Pusher, Uid, CORS, SCSS
