@@ -1,0 +1,15 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_2" fill="#95a5a6" d="m5,1.999976c-1.1046,0 -2,0.9 -2,2l0,8l0,4l0,6c0,1.1 0.8954,2 2,2l14,0c1.105,0 2,-0.9 2,-2l0,-6l0,-4l0,-4l-6,-6l-10,0z"/>
+  <path id="svg_3" fill="#bdc3c7" d="m5,0.999976c-1.1046,0 -2,0.9 -2,2l0,8l0,4l0,6c0,1.1 0.8954,2 2,2l14,0c1.105,0 2,-0.9 2,-2l0,-6l0,-4l0,-4l-6,-6l-10,0z"/>
+  <path id="svg_4" fill="#95a5a6" d="m21,6.999976l-6,-6l0,4c0,1.1 0.895,2 2,2l4,0z"/>
+  <path id="svg_5" fill="#95a5a6" d="m6,8l0,1l12,0l0,-1l-12,0zm0,3l0,1l12,0l0,-1l-12,0zm0,3l0,1l12,0l0,-1l-12,0zm0,3l0,1l12,0l0,-1l-12,0z"/>
+  <text stroke="#000" transform="matrix(0.2838121984428765,0,0,0.2809505707044649,8.815635319516117,6.001976234954266) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_6" y="54.749514" x="-19.603937" stroke-width="0" fill="#4c4c4c">Trace</text>
+ </g>
+</svg>
