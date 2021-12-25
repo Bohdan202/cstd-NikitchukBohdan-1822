@@ -16,3 +16,6 @@
 You will should build and run project from "server.py" by using CTRL+ALT+N for run code if you stand at backend side or you will can enter "npm run dev" in terminal if you stand at frontend side.
 
 - Version number: 1.0.0
+
+
+-Created unittest for backend side in python-unittest folder

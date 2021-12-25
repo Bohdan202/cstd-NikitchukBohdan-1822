@@ -4,10 +4,6 @@
       <p class="inbutton">more ⯅</p>
     </div>
 
-    <!-- <div class="button" @click="hideDrawer">
-      <p class="inbutton">⯆</p>
-    </div> -->
-
     <div id="mySidenav" :class="{
       sidenav: true,
       sidenav_show: isShow,
@@ -205,11 +201,6 @@ input[type=text]:focus {
   width: 4rem;
   height: 4rem;
 }
-
-// .music {
-//   margin: auto;
-//   max-width: 30rem;
-// }
 
 .sidenav_show {
   min-width: 20rem;

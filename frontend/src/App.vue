@@ -33,12 +33,8 @@
   $bp-small: 37.5em; // 600px = 37.5em
   $bp-smallest: 25em; // 400px = 25em
 
-  // .body {
-  //   background-color: #f1f1f1;
-  // }
 
   .stickyup {
-    // position: sticky;
     top: 0;
     z-index: 10;
   } 
@@ -47,7 +43,6 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    // text-align: center;
     color: #2c3e50;
     margin: 0;
   }
@@ -56,10 +51,5 @@
     height: 3rem;
     z-index: 10;
   }
-
-  // .body {
-  //   height: 94vh;
-  //   // width: 98vw;
-  // }
 
 </style>

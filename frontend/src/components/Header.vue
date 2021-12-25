@@ -5,7 +5,6 @@
         <nav>
           <ul>
             <img src="..\assets\logo.png" alt="logo" class="logo_img">
-            <!-- <li class="logo">Project_72</li> -->
             <li class="logo"></li>
 
             <router-link v-for="(item, index) in menuList" :key="index" tag="li"
@@ -146,18 +145,6 @@ nav ul li.items {
   order: 3;
 }
 
-// nav ul li.items:after {
-//   position: absolute;
-//   content: '';
-//   left: 0;
-//   bottom: 0.5rem;
-//   height: 0.2rem;
-//   width: 100%;
-//   background: #33ffff;
-//   opacity: 0;
-//   transition: all 0.2s linear;
-// }
-
 nav ul li.items:hover:after {
   opacity: 1;
   bottom: 0.8rem;
@@ -231,10 +218,6 @@ nav ul li.btn.hide i:before {
   width: 10rem;
 
   cursor: pointer;
-
-  // border-radius: 100px;
-  // border: 2px solid rgb(128, 128, 128);
-  // box-shadow: 0 0 7px #666;
 }
 
 .submenu { display: none; }

@@ -17,17 +17,6 @@
           <div @click="hideDrawer" class="item_text">{{ item.text }}</div>
         </router-link>
 
-        <!-- <button class="list-group-item list-group-item-action" @click="onLogout">
-          <div class="item_text">Logout</div>
-        </button> -->
-
-
-      <!-- <div class="list-group" v-if="!isUserLoggedIn">
-        <router-link active-class="active" to="/login" tag="button" class="list-group-item list-group-item-action">
-          <span @click="hideDrawer">Login</span>
-        </router-link>
-      </div> -->
-
     </div>
 
   </div>

@@ -139,22 +139,15 @@ h3 {
   text-shadow: 1px 1px 1px #fff;
 }
 
-// Start  styling the page
 .container-audio {
   position: fixed;
   width: 100vw;
   height: 6vh;
-
   left: 0;
   bottom: 0;
-
-  // padding: 20px;
-
   border: 1px solid #444;
-  // border-radius: 5px;
   background-color: #eee;
   color: #444;
-  // margin: 20px auto;
   overflow: hidden;
 
   z-index: 15;
@@ -167,9 +160,7 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
 }
 .container-audio, .colum1 {
   width: 23px;
-  // height: 5em;
   border-radius: 5px;
-  // margin: 0 10px 0 0;
   display: inline-block;
   position: relative;
 }
@@ -178,9 +169,7 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
 }
 .container-audio, .colum1, .row {
   width: 100%;
-  // height: 100%;
   border-radius: 5px;
-  // background: linear-gradient(to up, #7700aa, #8800ff);
   position: absolute;
   -webkit-animation: Rofa 10s infinite ease-in-out;
   animation: Rofa 10s infinite ease-in-out;

@@ -10,7 +10,6 @@
       @click="showChat()"
     >
       <div id="chat-overlay"></div>
-      <!-- <i class="material-icons">Chat</i> -->
     </div>
 
     <div
@@ -77,7 +76,6 @@
 </template>
 
 <script>
-// import Loader from "@/components/Loader";
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
@@ -122,17 +120,6 @@ export default {
     ...mapGetters(["iflogin", "nickname"]),
   },
   mounted() {
-    // this.sockets.subscribe("new_message", (data) => {
-
-    //   this.messages.push({
-    //     name: data.user.nickname,
-    //     photo: data.user.photo,
-    //     time: data.time,
-    //     text: data.message,
-    //   });
-
-    // });
-
     this.$pusher.subscribe('chat').bind('new_message', (data) => {
       this.messages.push({
         name: data.user.nickname,
@@ -142,18 +129,6 @@ export default {
       });
     });
 
-    // this.$socket.emit("join_to_chat", {});
-
-    // this.sockets.subscribe("join_to_chat", (data) => {
-      // data.messages.forEach(element => {
-      //   this.messages.push({
-      //     name: element.user.nickname,
-      //     photo: element.user.photo,
-      //     time: element.time,
-      //     text: element.message,
-      //   });
-      // });
-    // });
 
     this.$http.post('join_to_chat', {}, { withCredentials: true })
     .then(response => { return response.json(); })
@@ -213,13 +188,11 @@ body {
   bottom: 5vmin;
   right: 5vmin;
 
-  // padding: 1rem 1rem 1rem 1rem;
 
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   color: white;
-  // padding: 28px;
   cursor: pointer;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6),
     0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -227,7 +200,6 @@ body {
   text-align: center;
   vertical-align: middle;
 
-  // background: #5a5eb9;
   background: url("../assets/img/PNG/icons80.png") no-repeat center;
   background-size: 3.2rem;
 }
@@ -249,11 +221,9 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  // display: none;
 }
 
 .chat-box {
-  // display:none;
   background: #efefef;
   position: fixed;
   right: 3rem;
@@ -262,13 +232,9 @@ body {
   max-width: 85vw;
   max-height: 100vh;
   border-radius: 5px;
-  /*   box-shadow: 0px 5px 35px 9px #464a92; */
   box-shadow: 0px 5px 35px 9px #ccc;
 }
 
-// .show_chat-box {
-//   display: flex;
-// }
 .hide {
   display: none;
 }
@@ -293,7 +259,6 @@ body {
   height: 370px;
   height: auto;
   border: 1px solid #ccc;
-  // overflow: hidden;
 }
 .chat-box-body:after {
   content: "";
@@ -364,7 +329,6 @@ body {
 }
 
 .chat-logs::-webkit-scrollbar-track {
-  // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #f5f5f5;
 }
 
@@ -395,7 +359,6 @@ body {
   height: 2rem;
   border-radius: 50%;
   float: right;
-  // width: 15%;
 }
 
 .msg-avatar {
@@ -443,26 +406,6 @@ body {
   margin-bottom: 70px;
 }
 
-// .chat_icon {
-//   margin: auto;
-//   // margin-left: 0.7rem;
-//   background: url('../assets/img/PNG/icons82.png') no-repeat center;
-//   background-size: contain;
-
-//   // position: fixed;
-//   // right: 2.2vh;
-//   // top: 1vh;
-
-//   // height: 4vh;
-//   // width: 15vh;
-
-//   cursor: pointer;
-
-//   // border-radius: 100px;
-//   // border: 2px solid rgb(128, 128, 128);
-//   // box-shadow: 0 0 7px #666;
-// }
-
 .chat_photo {
   height: 1.5rem;
   width: 1.5rem;
@@ -470,20 +413,11 @@ body {
   border-radius: 100px;
   border: 2px solid rgb(128, 128, 128);
   box-shadow: 0 0 7px #666;
-
-  // cursor: pointer;
-
-  //   width: 1rem;
-  //   height: 2rem;
-  //   border-radius: 50%;
-  //   float: left;
-  //   // width: 15%;
 }
 
 .tooltip {
   position: relative;
   display: inline-block;
-  // border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
@@ -495,7 +429,6 @@ body {
   border-radius: 6px;
   padding: 5px 0;
 
-  /* Position the tooltip */
   position: absolute;
   z-index: 1;
 }

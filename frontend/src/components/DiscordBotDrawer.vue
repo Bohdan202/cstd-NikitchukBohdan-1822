@@ -4,10 +4,6 @@
       <p class="inbutton">more ⯅</p>
     </div>
 
-    <!-- <div class="button" @click="hideDrawer">
-      <p class="inbutton">⯆</p>
-    </div> -->
-
     <div id="mySidenav" :class="{
       sidenav: true,
       sidenav_show: isShow,
@@ -44,21 +40,6 @@ export default {
       isShow: false,
     }
   },
-  // props: [
-  //   "set_songs"
-  // ],
-  // methods: {
-  //   toggleDrawer() {
-  //     this.isShow = !this.isShow;
-  //     // this.isShow = true;
-  //   },
-  //   hideDrawer() {
-  //     this.isShow = false;
-  //   },
-  // },
-  // computed: {
-
-  // }
 }
 </script>
 
@@ -107,14 +88,9 @@ input[type=text]:focus {
 
   position: fixed;
   right: 0;
-  // margin-top: auto;
-  // margin-bottom: auto;
   background-color: #151515;
-  // color: #fff;
 
   top: 50%;
-  // text-align: center;
-  // transform: rotate(-90deg);
 
   z-index: 1;
 }
@@ -131,11 +107,6 @@ input[type=text]:focus {
   height: 4rem;
 }
 
-// .music {
-//   margin: auto;
-//   max-width: 30rem;
-// }
-
 .sidenav_show {
   min-width: 20rem;
   max-width: 45rem;
@@ -147,7 +118,6 @@ input[type=text]:focus {
 
 .sidenav {
   height: 100%;
-  // width: 30rem;
   position: fixed;
   z-index: 1;
   top: 6vh;
