@@ -1,0 +1,5 @@
+all: python run.py
+discordbot: python discordbot.py
+web: gunicorn server:app
+web2: gunicorn --worker-class eventlet -w 1 server:app
+web0: python server.py

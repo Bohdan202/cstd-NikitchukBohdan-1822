@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+	<defs>
+		<image  width="100" height="100" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAAAXNSR0IB2cksfwAAAANQTFRF////p8QbyAAAABRJREFUeJxjYBgFo2AUjIJRQE8AAAV4AAEI/UWDAAAAAElFTkSuQmCC"/>
+		<image  width="100" height="100" id="img2" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IB2cksfwAAAftQTFRFFRUV/f399/j2iox+////xcW5jo6EnJh/8PDsY11DeHFUbGpeysa4+fn3UlVP/f79ZWdcwMK0jIdz2NbNXV1V1tHFraufc3Bhg39z9vXunZVxGhoXbGRACgIAx8GldXFlqqmUnJRwSkIepKKWko+Avbq0IB8curWmrKeUfndtwr2z7+3ourWbbGdKXFhPb21gi4l8k5GEop6ThIB1hX9xfXhlWlU/a2dM2NXCcm5lbWxa3t3Sfnpxo6CNgn51goB0gHxz4N/Zc29mYFxTyse0iIZtpaaesayacm1acHJt1NTI+fn2hYdyysm7WlpO9/f1b21hwL6xaWZTcW9i8/LsKykcr6yZ+fjzbmhGeHRXYmBLq62iXVpJsbKsnpuUlpOM1tfQVVJGiYdyWVdCx8a2+vr5dnlwpqGO5OTcX1xTmpiM+vr4vb+vgoR2FhYWamdgW1pVhIF4oZ+Sx8a67e3n/Pz77ezk4N/VqaaTnZqLkpCDhoR4fHhsbmtcTUo8fXx4Uk48Y15LaWNTamdWa2hZYFxRUk9GwL60Y2RfbWlenJiN1tTKsaypb2pnW1tT7+7ourmmxcOy6unhaWNjvbuwdnJzi4t/eXltioNw+Pbz7urk0srC5ODbio18YlhWmpGM3NjSMTIrZWBdvbizjY2FQD88enpyfHxybm5mgNq+UQAAAilJREFUeJzt2Pk3VVEUwPGrdnMIKZUxQ5ppDkWGzLNKNEqlgQZCUWRoTkmDJkql/kz3vYe36LhvO3ufs5a1zven9+5ad3/WGd4vz7JMJpPJtMDyW7RYPQJ2S3QgAEvVIss8ynKlyAqYTCWyElQrq1aDN38lRADMLFCBsQZmF8SP/GcABHMbIQKE+/DXigwI5UXWCRFYz4qIDeYNmwsJY0Y2bFS8lE32uPCISAESxYdE2+NiNqs9ldi5joQTcTAgTgfix4XEOylciONS2H71CQ7IFi7EshI17Jfd1m3b1SPuduhAdgqQXUyzdycl79m7b/+Bg4cEyGEGICXV4Wq5SiMTR3wIdkeJRLpvAiCDZhzDGMTtQhEAmRoMyCIY2ViEYORgDQqCNgjIcbSRq2MhedJGvo7dKkAbhfJIIRopkkd07BYeKdaBlGhASgkGGinTgVAMqxxnVJCQSpRRRTKQ+3WCiJxEGKeqT9doWIpdLcE4g0XgrLRxDm3IX+Pz8zAuSBoXXS/XWZfqfROXr8gu5Kr9doP707XrNxyEm41NsoTnZt2a/nb7zt3mlntTg1vb6tvvP+jofPhIfv400kWcgUIEl6b7cU9vX/8TJuSpW3nmffD8xcsZh/HqNR0ZmBr2Jvrt4DvxoQ+Rlfe+7y58ICsfEQoZcfyjY7JPdMWyhkO9Az9/+fptNvKdAxE0MvrDi/xUhLga++Uxfis0XP0Z//tPMWEymUymhdIEjGFXB55BoQUAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Background" href="#img1" x="0" y="0" />
+	<use id="Слой 1" href="#img2" x="0" y="0" />
+</svg>
