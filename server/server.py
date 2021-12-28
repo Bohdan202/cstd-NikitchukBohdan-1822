@@ -1,3 +1,5 @@
+from datetime import datetime
+from math import sqrt
 from flask import request, redirect, render_template, send_from_directory, url_for, make_response
 from flask import Flask
 from flask.globals import current_app
@@ -35,21 +37,23 @@ ORIGINS = [
     'http://localhost:5000',
     'http://127.0.0.1:8080',
     'https://app72-63cf0.web.app/',
-    'https://app-72.herokuapp.com/'
+    'https://app-72.herokuapp.com/',
+    'http://192.168.1.105:5000'
 ]
 
-CORS(app, resources={ r'/*': {'origins': ORIGINS}}, supports_credentials=True)
+CORS(app, resources={r'/*': {'origins': ORIGINS}}, supports_credentials=True)
 
 # socketio = SocketIO(app, cors_allowed_origins="*", message_queue='redis://', async_mode=None)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 pusher_client = pusher.Pusher(
-  app_id='1257972',
-  key='11a3c34b3c5456540148',
-  secret='4272e6c4ce94ff9cd8b9',
-  cluster='eu',
-  ssl=True
+    app_id='1257972',
+    key='11a3c34b3c5456540148',
+    secret='4272e6c4ce94ff9cd8b9',
+    cluster='eu',
+    ssl=True
 )
+
 
 def handler(request):
     uid = request.cookies.get('uid')
@@ -59,44 +63,51 @@ def handler(request):
     if (uid is not None):
         valid1 = firebase.get_valid(uid, token)
         valid2 = firebase.get_admin(uid)
-        
+
         valid = valid1 and valid2
 
     # print("handler:", valid)
     return valid
+
 
 @app.route("/admin", methods=['GET'])
 def admin():
     if handler(request):
         return send_from_directory(app.static_folder, "admin.html")
     else:
-        return { 'status': 'bad_token' }
+        return {'status': 'bad_token'}
+
 
 @app.route('/', methods=['GET'])
 def index():
     return send_from_directory(app.static_folder, "index.html")
 
+
 @app.route("/", subdomain="music", methods=['GET'])
 def music():
     return send_from_directory(app.static_folder, "music.html")
+
 
 @app.route("/m", methods=['GET'])
 def music1():
     return send_from_directory(app.static_folder, "music.html")
 
+
 @app.route('/check', methods=['GET', 'POST'])
 def check():
     return "OK"
 
+
 @app.route('/test_sleep5', methods=['GET', 'POST'])
 def test_sleep():
     time.sleep(5)
-    return { 'value': 'Hello' }
+    return {'value': 'Hello'}
+
 
 @app.route('/test_pusher', methods=['GET', 'POST'])
 def test_pusher():
     pusher_client.trigger('mychannel', 'myevent', {'message': 'hello world'})
-    return { 'status': 'OK' }
+    return {'status': 'OK'}
 
 # @socketio.on('connect')
 # def connect():
@@ -114,8 +125,6 @@ current_chat_time = {}
 last_messages = []
 count_last_messages = 20
 
-from math import sqrt
-from datetime import datetime
 
 @socketio.on("set_position")
 def set_position(arg=None):
@@ -124,27 +133,28 @@ def set_position(arg=None):
     uid = request.cookies.get('uid')
 
     if uid in current_time:
-        if (time.time()-current_time[uid]>0.05):
+        if (time.time()-current_time[uid] > 0.05):
 
             # print('time:', time.time())
-                
+
             x = arg['x']
             y = arg['y']
 
-            if x!=0:
+            if x != 0:
                 x = x/abs(x)
-            if y!=0:
+            if y != 0:
                 y = y/abs(y)
 
             sp = speed
-            if x!=0 and y!=0:
+            if x != 0 and y != 0:
                 sp = speed / sqrt(2)
-            
+
             if uid in chars and 'x' in chars[uid] and 'y' in chars[uid]:
                 chars[uid]['x'] += int(x) * sp
                 chars[uid]['y'] += int(y) * sp
 
-            emit('update_user', { 'id': uid, 'user': chars[uid] }, broadcast=True, namespace='')
+            emit('update_user', {
+                 'id': uid, 'user': chars[uid]}, broadcast=True, namespace='')
 
             current_time[uid] = time.time()
     else:
@@ -159,7 +169,7 @@ def set_position(arg=None):
 #         if not uid in current_chat_time or time.time()-current_chat_time[uid]>0.1:
 #             if not uid in current_chat_time:
 #                 current_chat_time[uid] = time.time()
-            
+
 #             user = firebase.get_user(uid)
 #             c_time = datetime.now()
 
@@ -178,7 +188,7 @@ def set_position(arg=None):
 #                 'message': arg['message'],
 #                 'time': curr_time
 #             }
-            
+
 #             if len(last_messages)>:
 #                 last_messages.pop(0)
 
@@ -198,6 +208,7 @@ def set_position(arg=None):
 #                 'time': ''
 #                 }, namespace='')
 
+
 @app.route('/send_message', methods=['GET', 'POST'])
 def send_message(arg=None):
     print("send message")
@@ -205,16 +216,19 @@ def send_message(arg=None):
     arg = request.json
 
     if uid:
-        if not uid in current_chat_time or time.time()-current_chat_time[uid]>0.1:
+        if not uid in current_chat_time or time.time()-current_chat_time[uid] > 0.1:
             if not uid in current_chat_time:
                 current_chat_time[uid] = time.time()
-            
+
             user = firebase.get_user(uid)
             c_time = datetime.now()
 
-            hour = str(c_time.hour) if c_time.hour>=10 else '0' + str(c_time.hour)
-            minute = str(c_time.minute) if c_time.minute>=10 else '0' + str(c_time.minute)
-            second = str(c_time.second) if c_time.second>=10 else '0' + str(c_time.second)
+            hour = str(c_time.hour) if c_time.hour >= 10 else '0' + \
+                str(c_time.hour)
+            minute = str(
+                c_time.minute) if c_time.minute >= 10 else '0' + str(c_time.minute)
+            second = str(
+                c_time.second) if c_time.second >= 10 else '0' + str(c_time.second)
 
             curr_time = hour + ':' + minute + ':' + second
 
@@ -227,8 +241,8 @@ def send_message(arg=None):
                 'message': arg['message'],
                 'time': curr_time
             }
-            
-            if len(last_messages)>count_last_messages:
+
+            if len(last_messages) > count_last_messages:
                 last_messages.pop(0)
 
             last_messages.append(message)
@@ -236,7 +250,7 @@ def send_message(arg=None):
             pusher_client.trigger('chat', 'new_message', message)
 
             current_chat_time[uid] = time.time()
-            return { 'status': 'OK' }
+            return {'status': 'OK'}
         else:
             pusher_client.trigger('chat', 'new_message', {
                 'id': 'server',
@@ -246,22 +260,23 @@ def send_message(arg=None):
                 },
                 'message': 'wait, not so fast',
                 'time': ''
-                }, namespace='')
-            return { 'status': 'OK' }
+            }, namespace='')
+            return {'status': 'OK'}
     else:
-        return { 'status': 'OK' }
+        return {'status': 'OK'}
 
 # @socketio.on("join_to_chat")
 # def join_to_chat(arg=None):
 #     print("join_to_chat")
 #     emit('join_to_chat', { 'messages': last_messages }, namespace='')
 
+
 @app.route('/join_to_chat', methods=['GET', 'POST'])
 def join_to_chat():
     print("join_to_chat")
-    pusher_client.trigger('chat', 'join_to_chat', { 'messages': last_messages })
-    return { 'status': 'OK', 'messages': last_messages }
-        
+    pusher_client.trigger('chat', 'join_to_chat', {'messages': last_messages})
+    return {'status': 'OK', 'messages': last_messages}
+
 # @socketio.on('message')
 # def handleMessage(msg):
 # 	print('Message: ' + msg)
@@ -273,7 +288,7 @@ def start():
 
     # app.run(host='0.0.0.0', port=port)
     # firebase.report("server started")
-    
+
     # socketio.run(app, host='0.0.0.0', port=port, debug=False)
     socketio.run(app, host='0.0.0.0', port=5000, debug=False)
     # socketio.run(app, host='0.0.0.0', debug=False)
@@ -285,5 +300,5 @@ def start():
 # start()
 
 if __name__ == "__main__":
-#     discthread.start()
+    #     discthread.start()
     start()
